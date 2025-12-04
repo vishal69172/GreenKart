@@ -1,37 +1,35 @@
 export const products = {
-  'Your Menu Add-ons': [
-    { id: 1, name: 'Walnut Brownie (80 gm/pc), 720 gm (Frozen)', price: 230, unit: '9 pc', pricePerUnit: '₹25.56/pc', dietary: true },
-    { id: 2, name: 'Double Chocochip Brownie (80 gm/pc), 720 gm (Frozen)', price: 210, unit: '9 pc', pricePerUnit: '₹23.33/pc', dietary: true },
-    { id: 3, name: 'Molten Choco Lava (80 gm/pc), 720 gm (Frozen)', price: 220, unit: '9 pc', pricePerUnit: '₹24.44/pc', dietary: true },
-    { id: 4, name: 'Potato Cheese Balls (45-50 pcs/pack), 1 Kg (Frozen)', price: 190, unit: '1 pack', dietary: true },
-    { id: 5, name: 'Hazelnut Brownie (80 gm/pc), 720 gm (Frozen)', price: 200, unit: '9 pc', pricePerUnit: '₹22.22/pc', dietary: true },
-    { id: 6, name: 'Crunchy Chicken Popcorn (90-100 pcs/pack), 1 Kg (Frozen)', price: 380, unit: '1 pack', dietary: true },
-    { id: 7, name: 'Butter Croissant, Handrolled (75 gm/pc) (Frozen)', price: 180, unit: '3 pc', pricePerUnit: '₹60/pc', dietary: true },
-    { id: 8, name: 'Brioche Burger Buns, 60 gm/pc (Pack of 4), Frozen', price: 79, unit: '4 pc', pricePerUnit: '₹19.75/pc', dietary: true },
-  ],
   'Fruits & Vegetables': [
-    { id: 9, name: 'Carrots (Big), 1 Kg', price: 45, unit: '1 kg', dietary: true },
-    { id: 10, name: 'Green Chilli /Mirchi (Spicy), 500 gm', price: 33, unit: '0.50 kg', dietary: true },
-    { id: 11, name: 'Mint Leaves (Pudina), 250 gm', price: 15, unit: '0.25 kg', dietary: true },
-    { id: 12, name: 'Frozen Sweet Corn, 1 Kg', price: 80, unit: '1 kg', dietary: true },
-    { id: 13, name: 'Frozen Green Peas, 1 Kg', price: 95, unit: '1 kg', dietary: true },
-    { id: 14, name: 'Spring Onion, 250 gm', price: 17, unit: '0.25 kg', dietary: true },
-    { id: 15, name: 'Coriander Leaves (Kothmir), 1 Kg', price: 72, unit: '1 kg', dietary: true },
-    { id: 16, name: 'Green Capsicum (Big Size), 1 Kg', price: 93, unit: '1 kg', dietary: true },
-    { id: 17, name: 'Basil Leaves, 100 gm', price: 12, unit: '0.10 kg', dietary: true },
-    { id: 18, name: 'Onion (Regular), 5 Kg', price: 114, unit: '5 kg', pricePerUnit: '₹22.8/kg', dietary: true },
+    { id: 9, name: 'Carrots (Big), 1 Kg', price: 74, unit: '1 kg', dietary: true, image: 'https://images.unsplash.com/photo-1445282768818-728615cc910a?w=400&h=400&fit=crop', bulkPricing: [
+      { minQty: 3, pricePerUnit: 72, label: '3 kgs+' },
+      { minQty: 7, pricePerUnit: 71, label: '7 kgs+' }
+    ]},
+    { id: 10, name: 'Green Chilli /Mirchi (Spicy), 500 gm', price: 33, unit: '0.50 kg', dietary: true, image: 'https://images.unsplash.com/photo-1594223274512-ad4803739b7c?w=400&h=400&fit=crop' },
+    { id: 11, name: 'Mint Leaves (Pudina), 250 gm', price: 19, unit: '0.25 kg', dietary: true, image: 'https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?w=400&h=400&fit=crop', bulkPricing: [
+      { minQty: 4, pricePerUnit: 72, label: '1 kg+' }
+    ]},
+    { id: 12, name: 'Frozen Sweet Corn, 1 Kg', price: 80, unit: '1 kg', dietary: true, image: 'https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=400&h=400&fit=crop' },
+    { id: 13, name: 'Frozen Green Peas, 1 Kg', price: 95, unit: '1 kg', dietary: true, image: 'https://images.unsplash.com/photo-1593111774240-d529f12cf4bb?w=400&h=400&fit=crop' },
+    { id: 14, name: 'Spring Onion, 250 gm', price: 17, unit: '0.25 kg', dietary: true, image: 'https://images.unsplash.com/photo-1618512496249-3e7029d37045?w=400&h=400&fit=crop' },
+    { id: 15, name: 'Coriander Leaves (Kothmir), 1 Kg', price: 72, unit: '1 kg', dietary: true, image: 'https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?w=400&h=400&fit=crop' },
+    { id: 16, name: 'Green Capsicum (Big Size), 1 Kg', price: 49, originalPrice: 54.4, unit: '1 kg', dietary: true, discount: 14, image: 'https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=400&h=400&fit=crop', bulkPricing: [
+      { minQty: 3, pricePerUnit: 48, label: '3 kgs+' },
+      { minQty: 6, pricePerUnit: 47, label: '6 kgs+' }
+    ]},
+    { id: 17, name: 'Basil Leaves, 100 gm', price: 12, unit: '0.10 kg', dietary: true, image: 'https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?w=400&h=400&fit=crop' },
+    { id: 18, name: 'Onion (Regular), 5 Kg', price: 114, unit: '5 kg', pricePerUnit: '₹22.8/kg', dietary: true, image: 'https://images.unsplash.com/photo-1618512496249-3e7029d37045?w=400&h=400&fit=crop' },
   ],
   'Dairy': [
-    { id: 19, name: 'Amul - Butter Salted, 500 gm', price: 259, unit: '1 pack', dietary: true },
-    { id: 20, name: 'Amul - Fresh Cream, 1 L', price: 225, unit: '1 ltr', dietary: true },
-    { id: 21, name: 'Amul - Processed Cheese Block, 1 Kg', price: 484, unit: '1 kg', dietary: true },
-    { id: 22, name: 'Milky Mist - Paneer, 1 Kg', price: 324, unit: '1 kg', dietary: true },
-    { id: 23, name: 'Amul - Delicious Margarine, 500 gm', price: 85, unit: '0.50 kg', dietary: true },
-    { id: 24, name: 'Nutralite - Professional Fat Spread, 500 gm', price: 84, unit: '0.50 kg', dietary: true },
-    { id: 25, name: 'Amul - Toned Curd, 1 Kg', price: 47, unit: '1 kg', dietary: true },
-    { id: 26, name: 'Amul - Cheese, Diced Mozzarella, 1 Kg', price: 443, unit: '1 kg', dietary: true },
-    { id: 27, name: 'Amul - Taaza Milk, 1 L', price: 74, unit: '1 ltr', dietary: true },
-    { id: 28, name: 'Fresh Paneer, 1 Kg', price: 317, unit: '1 kg', dietary: true },
+    { id: 19, name: 'Amul - Butter Salted, 500 gm', price: 259, unit: '1 pack', dietary: true, image: 'https://images.unsplash.com/photo-1588165276332-4c59e7835b0c?w=400&h=400&fit=crop' },
+    { id: 20, name: 'Amul - Fresh Cream, 1 L', price: 225, unit: '1 ltr', dietary: true, image: 'https://images.unsplash.com/photo-1550583724-b2692b85b150?w=400&h=400&fit=crop' },
+    { id: 21, name: 'Amul - Processed Cheese Block, 1 Kg', price: 484, unit: '1 kg', dietary: true, image: 'https://images.unsplash.com/photo-1618164436269-0fbb1e8b3228?w=400&h=400&fit=crop' },
+    { id: 22, name: 'Milky Mist - Paneer, 1 Kg', price: 324, unit: '1 kg', dietary: true, image: 'https://images.unsplash.com/photo-1618164436269-0fbb1e8b3228?w=400&h=400&fit=crop' },
+    { id: 23, name: 'Amul - Delicious Margarine, 500 gm', price: 85, unit: '0.50 kg', dietary: true, image: 'https://images.unsplash.com/photo-1588165276332-4c59e7835b0c?w=400&h=400&fit=crop' },
+    { id: 24, name: 'Nutralite - Professional Fat Spread, 500 gm', price: 84, unit: '0.50 kg', dietary: true, image: 'https://images.unsplash.com/photo-1588165276332-4c59e7835b0c?w=400&h=400&fit=crop' },
+    { id: 25, name: 'Amul - Toned Curd, 1 Kg', price: 47, unit: '1 kg', dietary: true, image: 'https://images.unsplash.com/photo-1550583724-b2692b85b150?w=400&h=400&fit=crop' },
+    { id: 26, name: 'Amul - Cheese, Diced Mozzarella, 1 Kg', price: 443, unit: '1 kg', dietary: true, image: 'https://images.unsplash.com/photo-1618164436269-0fbb1e8b3228?w=400&h=400&fit=crop' },
+    { id: 27, name: 'Amul - Taaza Milk, 1 L', price: 74, unit: '1 ltr', dietary: true, image: 'https://images.unsplash.com/photo-1550583724-b2692b85b150?w=400&h=400&fit=crop' },
+    { id: 28, name: 'Fresh Paneer, 1 Kg', price: 317, unit: '1 kg', dietary: true, image: 'https://images.unsplash.com/photo-1618164436269-0fbb1e8b3228?w=400&h=400&fit=crop' },
   ],
 };
 

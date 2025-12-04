@@ -1,6 +1,6 @@
-# Greenkart - Hyperpure Clone
+# Greenkart
 
-A modern clone of the Hyperpure by Zomato website, built with React and Tailwind CSS.
+A modern grocery shopping platform built with React and Tailwind CSS.
 
 ## Features
 

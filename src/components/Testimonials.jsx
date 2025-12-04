@@ -16,20 +16,25 @@ const Testimonials = () => {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-          What our partners say about us
-        </h2>
+    <section className="py-20 bg-gradient-to-b from-white to-green-50">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+            What Our Partners Say
+          </h2>
+          <p className="text-lg text-gray-600">
+            Trusted by thousands of businesses across the country
+          </p>
+        </div>
 
-        <div className="relative bg-gray-50 rounded-lg p-8 md:p-12">
+        <div className="relative bg-white rounded-2xl p-10 md:p-14 shadow-xl border border-gray-100">
           <div className="text-center">
-            <h3 className="text-xl font-bold text-gray-900 mb-2">
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">
               {currentTestimonial.company}
             </h3>
-            <p className="text-sm text-gray-600 mb-6">{currentTestimonial.role}</p>
-            <p className="text-gray-700 leading-relaxed italic">
-              {currentTestimonial.text}
+            <p className="text-base text-primary font-semibold mb-8">{currentTestimonial.role}</p>
+            <p className="text-gray-700 leading-relaxed text-lg italic">
+              "{currentTestimonial.text}"
             </p>
           </div>
 

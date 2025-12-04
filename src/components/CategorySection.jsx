@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import ProductCard from './ProductCard';
 
-const CategorySection = ({ categoryName, products, tagline }) => {
+const CategorySection = ({ categoryName, products, tagline, onAddToCart, onRemoveFromCart, getCartQuantity }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const scroll = (direction) => {
@@ -19,15 +19,18 @@ const CategorySection = ({ categoryName, products, tagline }) => {
   };
 
   return (
-    <section className="py-8 bg-white">
+    <section className="py-10 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center justify-between mb-6">
           <div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-1">{categoryName}</h2>
-            {tagline && <p className="text-sm text-gray-600">{tagline}</p>}
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">{categoryName}</h2>
+            {tagline && <p className="text-base text-gray-600 font-medium">{tagline}</p>}
           </div>
-          <a href="#" className="text-primary font-medium hover:underline">
+          <a href="#" className="text-primary font-semibold hover:text-primaryDark transition-colors duration-200 flex items-center group">
             See all
+            <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
           </a>
         </div>
 
@@ -47,7 +50,12 @@ const CategorySection = ({ categoryName, products, tagline }) => {
           >
             {products.map((product) => (
               <div key={product.id} className="flex-shrink-0 w-48">
-                <ProductCard product={product} />
+                <ProductCard 
+                  product={product} 
+                  onAddToCart={onAddToCart}
+                  onRemoveFromCart={onRemoveFromCart}
+                  cartQuantity={getCartQuantity?.(product.id) || 0}
+                />
               </div>
             ))}
           </div>

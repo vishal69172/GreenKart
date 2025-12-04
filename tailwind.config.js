@@ -7,8 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#E23744',
+        primary: '#2E7D32', // Green color for Greenkart
+        primaryDark: '#1B5E20',
+        primaryLight: '#4CAF50',
         secondary: '#1A1A1A',
+        accent: '#E23744', // Red for CTAs
       },
     },
   },
