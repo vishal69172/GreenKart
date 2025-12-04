@@ -1,6 +1,10 @@
 # Greenkart
 
+<<<<<<< HEAD
 A modern grocery shopping platform built with React and Tailwind CSS.
+=======
+Built with React and Tailwind CSS.
+>>>>>>> 00f1a3d356d2a4a89231ca411abbf5baf84d82d4
 
 ## Features
 
