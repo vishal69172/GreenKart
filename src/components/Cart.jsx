@@ -11,6 +11,14 @@ const Cart = ({
   onCloseCart,
   getBulkPrice
 }) => {
+  const browseProducts = () => {
+    if (onCloseCart) onCloseCart();
+    // Navigate to products section after closing cart
+    setTimeout(() => {
+      const el = document.getElementById('products');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 0);
+  };
   const getBulkPriceInfo = (item) => {
     if (!item.bulkPricing || !item.bulkPricing.length) return null;
     
@@ -46,7 +54,7 @@ const Cart = ({
             <h2 className="text-2xl font-bold text-gray-900 mb-2">Your cart is empty</h2>
             <p className="text-gray-600 mb-6">Add items from the catalogue to get started</p>
             <button
-              onClick={onCloseCart}
+              onClick={browseProducts}
               className="px-6 py-3 bg-primary text-white rounded-md hover:bg-red-600 transition font-medium"
             >
               Browse Products
