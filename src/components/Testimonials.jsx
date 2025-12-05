@@ -1,73 +1,72 @@
-import React, { useState } from 'react';
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-import { testimonials } from '../data/testimonials';
+import React from 'react';
+import { FiStar } from 'react-icons/fi';
+
+const testimonials = [
+  {
+    name: 'Rajesh Sharma',
+    role: 'Owner, Sunrise PG (120 residents)',
+    initials: 'RS',
+    color: 'bg-green-600',
+    text: '“Switching to Green Kart saved us 2 hours every morning. The quality is consistently excellent, and our residents have noticed the difference in taste.”',
+  },
+  {
+    name: 'Priya Menon',
+    role: "Manager, Elite Women's Hostel",
+    initials: 'PM',
+    color: 'bg-blue-600',
+    text: '“The predictable pricing has been a game-changer for our budget planning. No more surprise price spikes during festival seasons.”',
+  },
+  {
+    name: 'Arun Kumar',
+    role: 'Chef, Tech Park Hostel',
+    initials: 'AK',
+    color: 'bg-purple-600',
+    text: "“Their account manager helped us optimize our weekly orders. We've reduced waste by 30% while maintaining variety in our menu.”",
+  },
+];
 
 const Testimonials = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextTestimonial = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevTestimonial = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
-
-  const currentTestimonial = testimonials[currentIndex];
-
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-green-50">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
-            What Our Partners Say
+    <section className="py-20 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-14">
+          <div className="inline-block mb-4">
+            <span className="px-4 py-2 bg-green-50 text-gray-900 rounded-lg font-semibold text-sm border border-green-200">
+              Client Success Stories
+            </span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+            Trusted by Leading PGs & Hostels
           </h2>
-          <p className="text-lg text-gray-600">
-            Trusted by thousands of businesses across the country
-          </p>
         </div>
 
-        <div className="relative bg-white rounded-2xl p-10 md:p-14 shadow-xl border border-gray-100">
-          <div className="text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">
-              {currentTestimonial.company}
-            </h3>
-            <p className="text-base text-primary font-semibold mb-8">{currentTestimonial.role}</p>
-            <p className="text-gray-700 leading-relaxed text-lg italic">
-              "{currentTestimonial.text}"
-            </p>
-          </div>
-
-          <div className="flex justify-center items-center mt-8 space-x-4">
-            <button
-              onClick={prevTestimonial}
-              className="p-2 rounded-full hover:bg-gray-200 transition"
-              aria-label="Previous testimonial"
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {testimonials.map((t, idx) => (
+            <div
+              key={idx}
+              className="bg-gray-50 rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300"
             >
-              <FiChevronLeft className="w-6 h-6 text-gray-700" />
-            </button>
-            
-            <div className="flex space-x-2">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`w-2 h-2 rounded-full transition ${
-                    index === currentIndex ? 'bg-primary' : 'bg-gray-300'
-                  }`}
-                  aria-label={`Go to testimonial ${index + 1}`}
-                />
-              ))}
+              <div className="flex items-center mb-4 text-primary">
+                {[...Array(5)].map((_, i) => (
+                  <FiStar key={i} className="w-5 h-5 fill-primary" />
+                ))}
+              </div>
+              <p className="text-gray-800 leading-relaxed mb-6">
+                {t.text}
+              </p>
+              <div className="flex items-center gap-4">
+                <div
+                  className={`${t.color} text-white font-bold w-12 h-12 rounded-full flex items-center justify-center`}
+                >
+                  {t.initials}
+                </div>
+                <div>
+                  <p className="text-gray-900 font-semibold">{t.name}</p>
+                  <p className="text-gray-600 text-sm">{t.role}</p>
+                </div>
+              </div>
             </div>
-
-            <button
-              onClick={nextTestimonial}
-              className="p-2 rounded-full hover:bg-gray-200 transition"
-              aria-label="Next testimonial"
-            >
-              <FiChevronRight className="w-6 h-6 text-gray-700" />
-            </button>
-          </div>
+          ))}
         </div>
       </div>
     </section>

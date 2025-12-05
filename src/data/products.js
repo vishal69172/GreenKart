@@ -4,7 +4,7 @@ export const products = {
       { minQty: 3, pricePerUnit: 72, label: '3 kgs+' },
       { minQty: 7, pricePerUnit: 71, label: '7 kgs+' }
     ]},
-    { id: 10, name: 'Green Chilli /Mirchi (Spicy), 500 gm', price: 33, unit: '0.50 kg', dietary: true, image: 'https://images.unsplash.com/photo-1594223274512-ad4803739b7c?w=400&h=400&fit=crop' },
+    { id: 10, name: 'Green Chilli /Mirchi (Spicy), 500 gm', price: 33, unit: '0.50 kg', dietary: true, image: 'https://images.unsplash.com/photo-1604908177520-4029a775e1c7?auto=format&fit=crop&w=800&q=80' },
     { id: 11, name: 'Mint Leaves (Pudina), 250 gm', price: 19, unit: '0.25 kg', dietary: true, image: 'https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?w=400&h=400&fit=crop', bulkPricing: [
       { minQty: 4, pricePerUnit: 72, label: '1 kg+' }
     ]},
