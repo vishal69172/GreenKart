@@ -2,7 +2,7 @@ import React from 'react';
 import { FiChevronLeft, FiPlus, FiMinus, FiTrash2, FiShoppingBag } from 'react-icons/fi';
 
 const Cart = ({ 
-  cartItems = [], 
+  cartItems = [],
   cartSummary, 
   onRemoveFromCart, 
   onAddToCart, 
@@ -94,9 +94,22 @@ const Cart = ({
                         className="border-b border-gray-200 pb-4 last:border-b-0 last:pb-0"
                       >
                         <div className="flex gap-4">
-                          {/* Product Image Placeholder */}
-                          <div className="w-20 h-20 bg-gray-100 rounded-lg flex-shrink-0 flex items-center justify-center">
-                            <FiShoppingBag className="w-8 h-8 text-gray-400" />
+                          {/* Product Image */}
+                          <div className="w-20 h-20 bg-gray-100 rounded-lg flex-shrink-0 overflow-hidden relative">
+                            {item.image ? (
+                              <img 
+                                src={item.image} 
+                                alt={item.name}
+                                className="w-full h-full object-cover"
+                                onError={(e) => {
+                                  e.target.style.display = 'none';
+                                  e.target.nextSibling.style.display = 'flex';
+                                }}
+                              />
+                            ) : null}
+                            <div className="absolute inset-0 flex items-center justify-center bg-gray-100" style={{ display: item.image ? 'none' : 'flex' }}>
+                              <FiShoppingBag className="w-8 h-8 text-gray-400" />
+                            </div>
                           </div>
 
                           {/* Product Details */}

@@ -30,25 +30,17 @@ const ProductCard = ({ product, onAddToCart, onRemoveFromCart, cartQuantity = 0 
       
       {/* Product Image */}
       <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden bg-gray-100">
-        {product.image ? (
-          <img 
-            src={product.image} 
-            alt={product.name}
-            className="w-full h-full object-cover"
-            onError={(e) => {
-              e.target.style.display = 'none';
-              e.target.nextSibling.style.display = 'flex';
-            }}
-          />
-        ) : null}
-        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-green-50 to-emerald-100" style={{ display: product.image ? 'none' : 'flex' }}>
-          <div className="text-center">
-            <div className="text-5xl mb-2">🛒</div>
-            <p className="text-xs text-gray-500">No Image</p>
-          </div>
-        </div>
+        <img 
+          src={product.image || 'https://via.placeholder.com/400x400?text=No+Image'} 
+          alt={product.name}
+          className="w-full h-full object-cover"
+          loading="lazy"
+          onError={(e) => {
+            e.target.src = 'https://via.placeholder.com/400x400?text=No+Image';
+          }}
+        />
         {product.dietary && (
-          <span className="absolute bottom-2 left-2 text-xs text-primary bg-white/90 backdrop-blur-sm font-semibold px-2 py-1 rounded-md">
+          <span className="absolute bottom-2 left-2 text-xs text-primary bg-white/90 backdrop-blur-sm font-semibold px-2 py-1 rounded-md z-10">
             ✓ Vegetarian
           </span>
         )}
